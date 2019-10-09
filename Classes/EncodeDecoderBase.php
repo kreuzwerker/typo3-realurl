@@ -117,6 +117,15 @@ abstract class EncodeDecoderBase {
 	}
 
 	/**
+	 * Returns the page repository. This can be used in hooks.
+	 *
+	 * @return PageRepository
+	 */
+	public function getPageRepository() {
+		return $this->pageRepository;
+	}
+
+	/**
 	 * Creates a query string (without preceding question mark) from
 	 * parameters.
 	 *
