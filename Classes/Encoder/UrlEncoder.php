@@ -201,9 +201,7 @@ class UrlEncoder extends EncodeDecoderBase {
 	protected function addRemainingUrlParameters() {
 		$urlParameters = $this->urlParameters;
 		unset($urlParameters['id']);
-		if (count($urlParameters) == 1 && isset($urlParameters['cHash'])) {
-			unset($urlParameters['cHash']);
-		} elseif (count($urlParameters) > 0) {
+		if (count($urlParameters) > 0) {
 			$this->encodedUrl .= '?' . trim(GeneralUtility::implodeArrayForUrl('', $urlParameters, '', false, true), '&');
 		}
 	}
